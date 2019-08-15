@@ -44,4 +44,10 @@ return [
         ],
     ],
 
+    'twilio' => [
+        'account_id' => env('TWILIO_ACCOUNT_ID'),
+        'token' => env('TWILIO_TOKEN'),
+        'number' => env('TWILIO_NUMBER'),
+    ],
+
 ];

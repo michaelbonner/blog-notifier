@@ -39,6 +39,10 @@ class User extends Authenticatable
 
     public function blogs()
     {
-        return $this->belongsToMany(Blog::class);
+        return $this->belongsToMany(Blog::class)
+            ->withPivot([
+                'notify_via',
+                'notify_location'
+            ]);
     }
 }
