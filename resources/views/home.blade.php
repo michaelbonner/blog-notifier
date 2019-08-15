@@ -9,12 +9,23 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
-                    You are logged in!
+                    <h3>Followed Blogs</h3>
+                    <ul>
+                        @foreach ($blogs as $blog)
+                        <li>
+                            {{$blog->name}}<br />
+                            <a href="{{$blog->feed_url}}" target="_blank">
+                                {{$blog->feed_url}}
+                            </a><br />
+                            Notify via {{$blog->pivot->notify_via}} at {{$blog->pivot->notify_location}}
+                        </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
