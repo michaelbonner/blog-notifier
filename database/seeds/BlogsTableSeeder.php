@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Blog;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class BlogsTableSeeder extends Seeder
@@ -12,6 +13,8 @@ class BlogsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Blog::class, 10)->create();
+        factory(Blog::class, 10)->create()->each(function ($blog) {
+            $blog->users()->attach(User::inRandomOrder()->first());
+        });
     }
 }
