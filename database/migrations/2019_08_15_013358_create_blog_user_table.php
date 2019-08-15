@@ -17,6 +17,8 @@ class CreateBlogUserTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('blog_id');
             $table->unsignedBigInteger('user_id');
+            $table->string('notify_via', 128);
+            $table->string('notify_location', 256);
         });
         Schema::table('blog_user', function (Blueprint $table) {
             $table->foreign('blog_id')

@@ -14,7 +14,10 @@ class BlogsTableSeeder extends Seeder
     public function run()
     {
         factory(Blog::class, 10)->create()->each(function ($blog) {
-            $blog->users()->attach(User::inRandomOrder()->first());
+            $blog->users()->attach(User::inRandomOrder()->first(), [
+                'notify_via' => 'sms',
+                'notify_location' => '+18018315287'
+            ]);
         });
     }
 }
