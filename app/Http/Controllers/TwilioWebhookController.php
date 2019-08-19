@@ -22,18 +22,8 @@ class TwilioWebhookController extends Controller
         ]);
 
         if ($twilioWebhook->isRequestingUnsubscribe()) {
-            BlogUser::where('notify_via', 'sms')->where('notify_location', $twilioWebhook->data['From'])->get()
-                ->each(function ($blogUser) {
-                    $twilio = new Twilio(
-                        config('services.twilio.account_id'),
-                        config('services.twilio.token'),
-                        config('services.twilio.number')
-                    );
-                    $twilio->message(
-                        $blogUser->notify_location,
-                        "You will no longer receive text messages from Blog Notifier. Thank you for using our application."
-                    );
-                })
+            BlogUser::where('notify_via', 'sms')
+                ->where('notify_location', $twilioWebhook->data['From'])
                 ->delete();
         }
 
