@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\TwilioWebhook;
+use App\Models\TwilioWebhook;
 use Illuminate\Http\Request;
 
 class TwilioWebhookController extends Controller

@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\TwilioWebhook;
+use App\Models\TwilioWebhook;
 use Faker\Generator as Faker;
 
 $factory->define(TwilioWebhook::class, function (Faker $faker) {
