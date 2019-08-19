@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Aloha\Twilio\Twilio;
 use App\Models\BlogUser;
 use App\Models\TwilioWebhook;
 use Illuminate\Http\Request;
