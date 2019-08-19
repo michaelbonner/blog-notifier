@@ -11,4 +11,9 @@ class TwilioWebhook extends Model
     protected $casts = [
         'data' => 'array'
     ];
+
+    public function isRequestingUnsubscribe()
+    {
+        return strstr($this->data['Body'], 'stop') ? true : false;
+    }
 }
