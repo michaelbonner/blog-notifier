@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class BlogUser extends Pivot
 {
+    public $timestamps = false;
+
     public function user()
     {
         return $this->belongsTo(User::class);
