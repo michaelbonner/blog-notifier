@@ -21,7 +21,7 @@ class VerifySubscription extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Sends an onboarding text to each subscriber';
 
     /**
      * Create a new command instance.
