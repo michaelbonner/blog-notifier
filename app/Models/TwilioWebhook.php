@@ -14,6 +14,9 @@ class TwilioWebhook extends Model
 
     public function isRequestingUnsubscribe()
     {
+        if (empty($this->data['Body'])) {
+            return false;
+        }
         return preg_match('/stop/i', $this->data['Body']);
     }
 }
