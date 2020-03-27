@@ -26,6 +26,8 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('feed:parse')
             ->hourly();
+        $schedule->command('telescope:prune')
+            ->daily();
     }
 
     /**
