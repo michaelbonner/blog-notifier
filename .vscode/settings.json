@@ -1,5 +1,17 @@
 {
     "cSpell.words": [
-        "twilio"
+        "beyondcode",
+        "csrf",
+        "dont",
+        "dynamodb",
+        "faker",
+        "fideloper",
+        "filp",
+        "fzaninotto",
+        "nunomaduro",
+        "predis",
+        "sslmode",
+        "twilio",
+        "willvincent"
     ]
 }
